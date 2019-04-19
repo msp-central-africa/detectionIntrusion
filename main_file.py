@@ -135,14 +135,14 @@ while True:
 			# extract the confidence (i.e., probability) associated
 			# with the prediction
 			confidence = detections[0, 0, i, 2]
-
+			print(detections.shape)
 			# filter out weak detections by requiring a minimum
 			# confidence
 			if confidence > args["confidence"]:
 				# extract the index of the class label from the
 				# detections list
 				idx = int(detections[0, 0, i, 1])
-
+				print("IDX : ",idx)
 				# if the class label is not a person, ignore it
 				if CLASSES[idx] != "person":
 					continue
